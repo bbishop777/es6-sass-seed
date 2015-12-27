@@ -18,3 +18,5 @@ gulp.task('sass', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('public/css'));
 });
+
+gulp.task('dev', ['sass', 'babel']);
