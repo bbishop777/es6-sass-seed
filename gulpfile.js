@@ -13,10 +13,14 @@ gulp.task('babel', function()  {
 
 
 //sass task
-gulp.task('sass', function () {
+gulp.task('sass', function() {
   gulp.src('scss/styles.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('public/css'));
+});
+
+gulp.task('watch', function() {
+  gulp.watch('src/**/*.js', ['babel']);
 });
 
 gulp.task('dev', ['sass', 'babel']);
